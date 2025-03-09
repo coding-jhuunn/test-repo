@@ -1,11 +1,9 @@
 <template>
   <div>
-    <div class="text-3xl font-bold underline">Header</div>
+    <div class="font-display bg-amber-950">Header</div>
+    <button class=".btn">red</button>
   </div>
 </template>
 
-<script setup>
-console.log("HEader");
-</script>
-
+<script setup></script>
 <style scoped></style>
