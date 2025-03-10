@@ -4,13 +4,13 @@
       <div>
         <label class="block font-medium">Title</label>
         <input
-          v-model="itemTodo.title"
+          v-model="titleTask"
           type="text"
           class="w-full p-2 border rounded-md"
         />
       </div>
       <div>
-        <input v-model="itemTodo.priority" type="checkbox" />
+        <input v-model="priorityTask" type="checkbox" />
         <label class="font-medium">Priority</label>
       </div>
       <button
@@ -22,15 +22,18 @@
   </div>
 </template>
 <script setup>
-import { reactive } from "vue";
+import { ref, reactive, defineEmits } from "vue";
+
+const emit = defineEmits(["updateTodoList"]);
 
 const submitForm = () => {
-  console.log(itemTodo);
+  emit("updateTodoList", {
+    id: Date.now(),
+    title: titleTask.value,
+    priorityTask: priorityTask.value,
+  });
 };
-const itemTodo = reactive([
-  {
-    title: "",
-    priority: false,
-  },
-]);
+
+const titleTask = ref("");
+const priorityTask = ref(false);
 </script>
