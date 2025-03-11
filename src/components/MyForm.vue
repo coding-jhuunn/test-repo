@@ -1,23 +1,31 @@
 <template>
-  <div class="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
-    <form @submit.prevent="submitForm" class="flex flex-col">
-      <div>
+  <div class="p-6 bg-white shadow-lg rounded-lg">
+    <form
+      @submit.prevent="submitForm"
+      class="flex flex-row justify-evenly items-center"
+    >
+      <div class="bg-red-50 flex flex-col h-12">
         <label class="block font-medium">Title</label>
         <input
           v-model="titleTask"
           type="text"
-          class="w-full p-2 border rounded-md"
+          class="border-b-2"
+          placeholder="Input Here"
         />
       </div>
-      <div>
+      <div
+        class="bg-green-50 flex justify-evenly align-center items-center h-12"
+      >
         <input v-model="priorityTask" type="checkbox" />
         <label class="font-medium">Priority</label>
       </div>
-      <button
-        class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600"
-      >
-        Submit
-      </button>
+      <div class="">
+        <button
+          class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600"
+        >
+          Submit
+        </button>
+      </div>
     </form>
   </div>
 </template>
