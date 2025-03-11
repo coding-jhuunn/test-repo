@@ -3,6 +3,7 @@
     <div class="flex">
       <div>
         {{ task.priorityTask }}
+        <button @click="toggleItem(task.id)">Toggle</button>
       </div>
       <div>
         {{ task.title }}
@@ -29,10 +30,13 @@
 import { defineEmits } from "vue";
 
 defineProps(["task"]);
-const emit = defineEmits(["deleteItemTodo"]);
+const emit = defineEmits(["deleteItemTodo", "toggleItemTodo"]);
 
 const deleteItem = (index) => {
   console.log(index);
   emit("deleteItemTodo", index);
+};
+const toggleItem = (index) => {
+  emit("toggleItemTodo", index);
 };
 </script>

@@ -7,6 +7,7 @@
         class="m-5 border-1"
         :myTodoList="todolist"
         @deleteItemTodo="deleteItemTodo"
+        @toggleItemTodo="toggleItemTodo"
       ></MyTodoList>
     </div>
   </div>
@@ -44,5 +45,12 @@ const updateTodoList = (item) => {
 };
 const deleteItemTodo = (item) => {
   todolist.value = todolist.value.filter((task) => task.id !== item);
+};
+const toggleItemTodo = (item) => {
+  console.log("toggle");
+  const task = todolist.value.find((task) => task.id === item);
+  if (task) {
+    task.priorityTask = !task.priorityTask;
+  }
 };
 </script>
