@@ -1,28 +1,9 @@
-<template>
-  <div>
-    <MyHeader></MyHeader>
-    <div class="flex flex-col justify-center items-center">
-      <MyForm class="m-5 border-1" @updateTodoList="updateTodoList"></MyForm>
-      <div>
-        <button @click="IsSorted = !IsSorted">
-          {{ IsSorted ? "Sort" : "Sorted" }}
-        </button>
-      </div>
-
-      <MyTodoList
-        class="m-5 border-1"
-        :myTodoList="IsSorted ? todolist : sortTask"
-        @deleteItemTodo="deleteItemTodo"
-        @toggleItemTodo="toggleItemTodo"
-      ></MyTodoList>
-    </div>
-  </div>
-</template>
 <script setup>
 import { computed, ref } from "vue";
 import MyHeader from "./components/MyHeader.vue";
 import MyForm from "./components/MyForm.vue";
 import MyTodoList from "./components/MyTodoList.vue";
+
 const todolist = ref([
   {
     id: 1,
@@ -46,7 +27,6 @@ const todolist = ref([
   },
 ]);
 const IsSorted = ref(true);
-
 const sortTask = computed(() => {
   return [...todolist.value].sort((a, b) => {
     return IsSorted.value
@@ -68,4 +48,24 @@ const toggleItemTodo = (item) => {
     task.priorityTask = !task.priorityTask;
   }
 };
+function toggleTodoList() {
+  IsSorted.value = !IsSorted.value;
+  console.log("toggled");
+}
 </script>
+
+<template>
+  <div>
+    <MyHeader></MyHeader>
+
+    <MyForm @updateTodoList="updateTodoList"></MyForm>
+
+    <MyTodoList
+      :IsSorted="IsSorted"
+      :myTodoList="IsSorted ? todolist : sortTask"
+      @deleteItemTodo="deleteItemTodo"
+      @toggleItemTodo="toggleItemTodo"
+      :toggleTodoList="toggleTodoList"
+    ></MyTodoList>
+  </div>
+</template>
