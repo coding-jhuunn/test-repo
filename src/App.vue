@@ -55,7 +55,7 @@ function toggleTodoList() {
 </script>
 
 <template>
-  <div>
+  <div class="bg-blue-50 min-h-screen">
     <MyHeader></MyHeader>
 
     <MyForm @updateTodoList="updateTodoList"></MyForm>

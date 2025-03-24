@@ -19,7 +19,7 @@ const props = defineProps({
 </script>
 <template>
   <div class="flex justify-center items-center">
-    <div class="w-[300px] sm:w-[400px] md:w-[600px]">
+    <div class="w-[300px] sm:w-[400px] md:w-[500px]">
       <div class="flex justify-between text-sm md:text-base mb-2 border-b-2">
         <div c>LIST TO DO</div>
         <div>

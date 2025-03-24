@@ -1,7 +1,10 @@
 <template>
   <div class="flex justify-center mb-5 p-5">
     <!-- text-xs sm:text-sm md:text-base lg:text-lg -->
-    <form class="p-5 w-[300px] shadow-xl" @submit.prevent="submitForm">
+    <form
+      class="p-5 w-[300px] shadow-xl rounded-2xl"
+      @submit.prevent="submitForm"
+    >
       <div class="mb-2">
         <input
           placeholder="Input Here ..."

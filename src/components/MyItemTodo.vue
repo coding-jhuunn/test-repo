@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-between items-center mb-2 p-1 rounded-lg"
+    class="flex justify-between items-center mb-2 p-1 rounded-lg shadow-sm"
     :class="task.priorityTask ? 'bg-green-200' : 'bg-orange-200'"
   >
     <div class="flex p-1">
