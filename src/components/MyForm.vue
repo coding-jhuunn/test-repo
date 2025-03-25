@@ -11,6 +11,7 @@
           v-model="titleTask"
           type="text"
           class="block w-full bg-gray-50 p-1 pl-2 focus:outline-none focus:ring-1 focus:ring-blue-500 rounded-lg"
+          @input="handleChangeInput"
         />
         <p class="ml-1 text-red-500 text-[10px]" v-if="errorShow">
           {{ errorMessage }}
@@ -40,6 +41,11 @@ const titleTask = ref("");
 const priorityTask = ref(false);
 const errorShow = ref(false);
 const errorMessage = ref("");
+
+// handle error message input empty to toggle
+function handleChangeInput(event) {
+  errorShow.value = false;
+}
 
 const submitForm = () => {
   if (titleTask.value.length === 0) {
