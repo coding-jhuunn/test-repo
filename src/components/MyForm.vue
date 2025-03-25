@@ -5,7 +5,7 @@
       class="p-5 w-[300px] shadow-xl rounded-2xl"
       @submit.prevent="submitForm"
     >
-      <div class="mb-2">
+      <div class="mb-1 flex flex-col justify-between h-11">
         <input
           placeholder="Input Here ..."
           v-model="titleTask"
@@ -13,7 +13,7 @@
           class="block w-full bg-gray-50 p-1 pl-2 focus:outline-none focus:ring-1 focus:ring-blue-500 rounded-lg"
           @input="handleChangeInput"
         />
-        <p class="ml-1 text-red-500 text-[10px]" v-if="errorShow">
+        <p class="ml-1 text-red-500 text-[10px]" v-show="errorShow">
           {{ errorMessage }}
         </p>
       </div>
