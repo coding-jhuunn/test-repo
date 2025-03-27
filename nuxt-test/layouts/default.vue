@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header>
+    <header class="shadow-sm bg-white">
       <nav>
         <ul>
           <li><nuxt-link to="/">Home</nuxt-link></li>
