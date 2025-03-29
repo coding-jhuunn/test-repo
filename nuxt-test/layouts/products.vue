@@ -2,7 +2,7 @@
   <div>
     <header>
       <nav>
-        <nuxt-link to="prodcuts">Products</nuxt-link>
+        <nuxt-link to="/products">Products</nuxt-link>
       </nav>
     </header>
     <div>
