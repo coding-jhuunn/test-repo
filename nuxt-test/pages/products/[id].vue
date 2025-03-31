@@ -1,5 +1,11 @@
 <template>
-  <ProductDetails :product="product"></ProductDetails>
+  <div>
+    <Head>
+      <Title> {{ product.title }}</Title>
+      <Meta name="descriptino" :content="product.description"></Meta>
+    </Head>
+    <ProductDetails :product="product"></ProductDetails>
+  </div>
 </template>
 
 <script setup>
