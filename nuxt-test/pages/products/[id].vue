@@ -1,12 +1,9 @@
 <template>
-  <div>
-    <p>{{ product.title }}</p>
-    <p>{{ product.price }}</p>
-    <p>{{ product.id }}</p>
-  </div>
+  <ProductDetails :product="product"></ProductDetails>
 </template>
 
 <script setup>
+import ProductDetails from "~/components/ProductDetails.vue";
 const { id } = useRoute().params;
 
 const uri = "https://fakestoreapi.com/products/" + id;
